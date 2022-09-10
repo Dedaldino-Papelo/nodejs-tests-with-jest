@@ -10,12 +10,13 @@ const createUser = (req, res) => {
         email
     }
    users.push(User)
+   delete User.id
    return res.json(User)
 
 }
 
 const listUsers = (req,res) => {
-    return res.json(users)
+    return res.status(200).json(users)
 }
 
 module.exports = {createUser,listUsers}
